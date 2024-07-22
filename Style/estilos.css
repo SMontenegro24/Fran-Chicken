@@ -1,0 +1,320 @@
+/* Reset básico para eliminar márgenes y rellenos predeterminados */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fuente personalizada para el texto */
+@font-face {
+    font-family: 'CHINO';
+    src: url('../Resources/Fonts/aAsianNinja.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Estilo del header */
+header {
+    background-color: #ed2f5e;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    transition: height 0.3s ease;
+}
+
+/* Estilo para el contenedor del isotipo */
+#isotipo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 0;
+}
+
+/* Estilo para el contenedor del logotipo */
+#logotipo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+/* Estilo para la imagen del isotipo */
+#isotipo img {
+    height: 100%;
+    width: auto;
+}
+
+/* Estilo para la imagen del logotipo */
+#logotipo img {
+    height: 80%;
+    width: auto;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Estilo hover para la imagen del logotipo */
+#logotipo img:hover {
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.486));
+    transform: scale(1.01);
+}
+
+/* Estilo active para la imagen del logotipo */
+#logotipo img:active {
+    transform: scale(0.95);
+}
+
+/* Estilo del nav */
+nav {
+    width: 100%;
+    height: 100px;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: height 0.3s ease;
+    z-index: 9;
+}
+
+/* Estilo para la lista del nav */
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilo para los elementos de la lista del nav */
+nav li {
+    font-family: 'CHINO';
+    font-size: 40px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo para los enlaces del nav */
+nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+    height: 100%;
+    color: #ed2f5e;
+    text-decoration: none;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: center;
+    width: 100%;
+}
+
+/* Estilo hover para los enlaces del nav */
+nav a:hover {
+    background-color: black;
+    color: #f0f0f0;
+}
+
+/* Estilo active para los enlaces del nav */
+nav a:active {
+    color: #ed2f5e;
+    transform: scale(0.95);
+}
+
+/* Estilo para la primera sección */
+#seccion_1 {
+    width: 100%;
+    height: 501px;
+    background-image: url('../Resources/Img/FotoExterior.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo para el encabezado de la primera sección */
+#seccion_1 h2 {
+    font-family: "CHINO";
+    font-size: 170px;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    z-index: 2;
+    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.822));
+}
+
+/* Estilo para la segunda sección */
+#seccion_2 {
+    width: 100%;
+    height: 501px;
+    background-color: rgb(49, 49, 49);
+}
+
+
+
+/* Estilos adicionales si es necesario */
+#seccionCarta h2 {
+    font-size: 36px;
+    text-align: center;
+}
+/* Estilo del footer */
+footer {
+    background-color: black;
+    width: 100%;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo para el contenedor del imagotipo en el footer */
+#imagotipo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+/* Estilo para la imagen del imagotipo en el footer */
+#imagotipo img {
+    height: 50%;
+    width: auto;
+}
+
+/* Estilo del nav cuando está en modo sticky */
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #000;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilo para todos los elementos dentro del nav en sticky */
+.sticky a,
+.sticky li {
+    color: #fff; /* Cambia el color del texto a blanco */
+}
+
+/* Estilo para todos los elementos dentro del nav en sticky excepto el logotipo */
+.sticky *:not(#nav-logotipo) {
+    background-color: #000; /* Cambia el fondo a negro para todos excepto el logotipo */
+}
+
+/* Estilo para el div con el logotipo en el nav (por defecto oculto) */
+#nav-logotipo {
+    display: none;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+}
+
+/* Muestra el div con el logotipo cuando la clase sticky-logo se aplica */
+.sticky #nav-logotipo {
+    display: block;
+}
+
+/* Ajusta el tamaño de la imagen en el nav */
+nav img {
+    height: auto; /* Ajusta la altura para que se ajuste adecuadamente */
+    width: 300px;
+}
+
+/*------------------------------CARTA----------------------------------*/
+
+.categoria h3 {
+    margin-bottom: 20px;
+    color: white; /* Asegúrate de que los encabezados también sean blancos */
+}
+
+.plato-info h4, .plato-info p {
+    color: white; /* Aplica color blanco a los títulos y descripciones de los platos */
+}
+#seccionCarta {
+    padding: 20px;
+    background-image: url('../Resources/Img/Fondo carta.png');
+    background-size: auto;
+    background-position: center;
+    background-repeat: repeat;
+    background-attachment: fixed; /* Hace que la imagen de fondo sea estática */
+    box-shadow: inset 0 0 10px 10px rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 30px;
+}
+
+.categoria {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.categoria h3 {
+    margin-bottom: 20px;
+}
+
+.platos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.plato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    background-color: #242424;
+}
+
+.plato:hover {
+    transform: scale(1.05);
+}
+
+.plato img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+}
+
+.plato-info {
+    text-align: center;
+}
+
+.plato-info h4 {
+    margin: 10px 0;
+}
+
+.plato-info p {
+    margin: 5px 0;
+}
+
+.plato-info button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color:#ed2f5e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.plato-info button:hover {
+    background-color: #ed2f5e;
+}
